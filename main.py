@@ -3,7 +3,7 @@ from pygame.locals import *
 import pygame.locals
 import button
 import gsm
-import numsort
+import levels.numsort as numsort
 
 things = list()
 SCREEN_WIDTH, SCREEN_HEIGHT = 1366, 786
@@ -56,19 +56,6 @@ class Menu:
             self.cap.release()
             pygame.quit()
         # score_button.draw()
-
-class Things:
-    def __init__(self, screen, id, x, y, image, scale):
-        self.id = id
-        self.width = image.get_width()
-        self.height = image.get_height()
-        self.image = self.image = pygame.transform.scale(image, (int(self.width * scale), int(self.height * scale)))
-        self.screen = screen
-        self.rect = self.image.get_rect()
-        self.rect.topleft = (x, y)
-        
-    def draw(self):
-        self.screen.blit(self.image, (self.rect.x, self.rect.y))
 
 if __name__ == "__main__":
     main = Main()
